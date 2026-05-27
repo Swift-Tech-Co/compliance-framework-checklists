@@ -1,0 +1,223 @@
+{
+  "meta": {
+    "title": "Compliance Framework Checklists",
+    "description": "Structured checklists and requirement summaries for major compliance frameworks relevant to software companies, SaaS, fintech, and healthcare technology.",
+    "version": "1.0.0",
+    "updated": "2026-05-26",
+    "source": "https://swifttechco.com",
+    "record_count": 8,
+    "disclaimer": "This dataset is for informational purposes only. Consult qualified legal and compliance professionals before making compliance decisions."
+  },
+  "frameworks": [
+    {
+      "id": "soc2",
+      "name": "SOC 2 Type II",
+      "full_name": "Service Organization Control 2",
+      "issuing_body": "AICPA",
+      "region": "Global (US-origin)",
+      "applicable_to": ["SaaS companies", "Cloud service providers", "Data processors"],
+      "audit_frequency": "Annual",
+      "typical_timeline_months": "6 to 12",
+      "typical_cost_usd": "30,000 to 100,000",
+      "trust_service_criteria": [
+        "Security (CC)",
+        "Availability (A)",
+        "Processing Integrity (PI)",
+        "Confidentiality (C)",
+        "Privacy (P)"
+      ],
+      "key_controls": [
+        { "id": "CC6.1", "domain": "Logical Access", "requirement": "Logical access security software, infrastructure, and architectures have been implemented to support access restriction to information assets" },
+        { "id": "CC6.2", "domain": "Logical Access", "requirement": "New internal and external users are registered, and authorized credentials are issued; users are removed or modified upon role change or termination" },
+        { "id": "CC6.3", "domain": "Logical Access", "requirement": "Role-based access control and principle of least privilege enforced" },
+        { "id": "CC7.1", "domain": "System Operations", "requirement": "Detection and monitoring tools identify anomalies indicating malicious acts, natural disasters, or errors affecting ability to meet objectives" },
+        { "id": "CC7.2", "domain": "Incident Response", "requirement": "Security incidents are identified and classified; response and recovery activities are performed" },
+        { "id": "CC8.1", "domain": "Change Management", "requirement": "Changes to infrastructure, data, software, and procedures are authorized, documented, tested, and approved" },
+        { "id": "CC9.1", "domain": "Risk Management", "requirement": "Risk assessments are performed; residual risk is identified; risk mitigation activities are implemented" },
+        { "id": "A1.1", "domain": "Availability", "requirement": "Current processing capacity and usage are maintained; future needs are forecasted and managed" },
+        { "id": "A1.2", "domain": "Availability", "requirement": "Environmental protections, software, data backup processes, and recovery infrastructure are in place" }
+      ],
+      "common_tools": ["Vanta", "Drata", "Secureframe", "Tugboat Logic", "Sprinto"]
+    },
+    {
+      "id": "pci_dss",
+      "name": "PCI DSS v4.0",
+      "full_name": "Payment Card Industry Data Security Standard",
+      "issuing_body": "PCI Security Standards Council",
+      "region": "Global",
+      "applicable_to": ["Merchants accepting cards", "Payment processors", "Service providers handling cardholder data"],
+      "audit_frequency": "Annual (Level 1); SAQ for lower levels",
+      "merchant_levels": {
+        "level_1": "Over 6 million Visa/Mastercard transactions per year; QSA audit required",
+        "level_2": "1 to 6 million transactions per year; self-assessment questionnaire",
+        "level_3": "20,000 to 1 million e-commerce transactions per year",
+        "level_4": "Under 20,000 e-commerce or under 1 million other transactions"
+      },
+      "requirements": [
+        { "req": "1", "title": "Install and maintain network security controls" },
+        { "req": "2", "title": "Apply secure configurations to all system components" },
+        { "req": "3", "title": "Protect stored account data" },
+        { "req": "4", "title": "Protect cardholder data with strong cryptography during transmission over open networks" },
+        { "req": "5", "title": "Protect all systems and networks from malicious software" },
+        { "req": "6", "title": "Develop and maintain secure systems and software" },
+        { "req": "7", "title": "Restrict access to system components and cardholder data by business need to know" },
+        { "req": "8", "title": "Identify users and authenticate access to system components" },
+        { "req": "9", "title": "Restrict physical access to cardholder data" },
+        { "req": "10", "title": "Log and monitor all access to system components and cardholder data" },
+        { "req": "11", "title": "Test security of systems and networks regularly" },
+        { "req": "12", "title": "Support information security with organizational policies and programs" }
+      ],
+      "typical_cost_usd": "15,000 to 500,000 (Level 1); 1,000 to 5,000 (SAQ)"
+    },
+    {
+      "id": "gdpr",
+      "name": "GDPR",
+      "full_name": "General Data Protection Regulation",
+      "issuing_body": "European Union",
+      "region": "EU / EEA (and any org processing EU resident data)",
+      "applicable_to": ["Any organization processing EU/EEA resident personal data"],
+      "audit_frequency": "Ongoing; no fixed audit cycle",
+      "max_fine": "4% of global annual turnover or EUR 20 million (whichever is higher)",
+      "key_principles": [
+        "Lawfulness, fairness and transparency",
+        "Purpose limitation",
+        "Data minimisation",
+        "Accuracy",
+        "Storage limitation",
+        "Integrity and confidentiality",
+        "Accountability"
+      ],
+      "key_requirements": [
+        { "article": "Art. 6", "requirement": "Lawful basis for processing (consent, contract, legal obligation, vital interests, public task, legitimate interests)" },
+        { "article": "Art. 13/14", "requirement": "Privacy notice: inform subjects what data you collect, why, how long, who you share with, their rights" },
+        { "article": "Art. 17", "requirement": "Right to erasure (right to be forgotten): honor deletion requests within 30 days" },
+        { "article": "Art. 20", "requirement": "Right to data portability: provide data in machine-readable format on request" },
+        { "article": "Art. 25", "requirement": "Data protection by design and by default" },
+        { "article": "Art. 28", "requirement": "Data Processing Agreement (DPA) required with all processors" },
+        { "article": "Art. 32", "requirement": "Appropriate technical and organizational security measures" },
+        { "article": "Art. 33", "requirement": "Notify supervisory authority of breach within 72 hours" },
+        { "article": "Art. 35", "requirement": "Data Protection Impact Assessment (DPIA) for high-risk processing" },
+        { "article": "Art. 37", "requirement": "Appoint Data Protection Officer (DPO) if processing at scale or sensitive categories" }
+      ],
+      "typical_implementation_cost_usd": "10,000 to 150,000"
+    },
+    {
+      "id": "hipaa",
+      "name": "HIPAA",
+      "full_name": "Health Insurance Portability and Accountability Act",
+      "issuing_body": "US Department of Health and Human Services (HHS)",
+      "region": "United States",
+      "applicable_to": ["Covered entities (health plans, providers, clearinghouses)", "Business Associates handling PHI"],
+      "key_rules": ["Privacy Rule", "Security Rule", "Breach Notification Rule", "Omnibus Rule"],
+      "key_requirements": [
+        { "rule": "Privacy", "requirement": "Limit uses and disclosures of PHI to minimum necessary; provide Notice of Privacy Practices" },
+        { "rule": "Privacy", "requirement": "Honor patient rights: access, amendment, accounting of disclosures, restrictions" },
+        { "rule": "Security", "requirement": "Conduct and document risk analysis; implement risk management plan" },
+        { "rule": "Security", "requirement": "Implement access controls: unique user IDs, emergency access procedure, automatic logoff, encryption" },
+        { "rule": "Security", "requirement": "Audit controls: hardware, software, and procedural mechanisms to record and examine access" },
+        { "rule": "Security", "requirement": "Transmission security: encrypt ePHI in transit; guard against unauthorized access during transmission" },
+        { "rule": "Security", "requirement": "Business Associate Agreements (BAA) required with all vendors handling PHI" },
+        { "rule": "Breach Notification", "requirement": "Notify HHS and affected individuals within 60 days of discovery of breach affecting 500+ individuals" }
+      ],
+      "baa_required_vendors": ["AWS", "Google Cloud", "Azure", "Twilio", "SendGrid", "Stripe"],
+      "max_fine_per_violation": 1919173,
+      "typical_audit_cost_usd": "20,000 to 200,000"
+    },
+    {
+      "id": "iso27001",
+      "name": "ISO/IEC 27001:2022",
+      "full_name": "Information Security Management Systems",
+      "issuing_body": "International Organization for Standardization",
+      "region": "Global",
+      "applicable_to": ["Any organization seeking internationally recognized information security certification"],
+      "audit_frequency": "Annual surveillance audits; full recertification every 3 years",
+      "typical_timeline_months": "9 to 18",
+      "typical_cost_usd": "25,000 to 150,000",
+      "annex_a_domains": [
+        "Organizational controls (37 controls)",
+        "People controls (8 controls)",
+        "Physical controls (14 controls)",
+        "Technological controls (34 controls)"
+      ],
+      "key_clauses": [
+        { "clause": "4", "title": "Context of the organization: stakeholders, scope, ISMS" },
+        { "clause": "5", "title": "Leadership: policy, roles, top management commitment" },
+        { "clause": "6", "title": "Planning: risk assessment and treatment, security objectives" },
+        { "clause": "7", "title": "Support: resources, competence, awareness, communication, documentation" },
+        { "clause": "8", "title": "Operation: risk assessment execution, risk treatment implementation" },
+        { "clause": "9", "title": "Performance evaluation: monitoring, internal audit, management review" },
+        { "clause": "10", "title": "Improvement: nonconformity, corrective action, continual improvement" }
+      ]
+    },
+    {
+      "id": "ccpa",
+      "name": "CCPA / CPRA",
+      "full_name": "California Consumer Privacy Act / California Privacy Rights Act",
+      "issuing_body": "State of California",
+      "region": "California (and any org collecting data of CA residents above thresholds)",
+      "applicable_to": "For-profit businesses that: collect CA resident personal info AND (revenue > $25M OR buy/sell data of 100,000+ consumers OR derive 50%+ revenue from selling personal info)",
+      "key_consumer_rights": [
+        "Right to know what personal information is collected",
+        "Right to delete personal information",
+        "Right to opt-out of sale or sharing of personal information",
+        "Right to non-discrimination for exercising CCPA rights",
+        "Right to correct inaccurate personal information (CPRA)",
+        "Right to limit use of sensitive personal information (CPRA)"
+      ],
+      "key_requirements": [
+        "Privacy policy must disclose categories collected, purpose, retention period, third parties",
+        "Provide Do Not Sell / Do Not Share opt-out mechanism",
+        "Honor deletion requests within 45 days (one 45-day extension allowed)",
+        "Data Processing Agreements with service providers",
+        "Annual privacy audits for high-risk processing (CPRA)"
+      ],
+      "max_fine_per_violation": 7500,
+      "max_fine_per_child_violation": 7500,
+      "enforcement_body": "California Privacy Protection Agency (CPPA)"
+    },
+    {
+      "id": "sox",
+      "name": "SOX",
+      "full_name": "Sarbanes-Oxley Act",
+      "issuing_body": "US Congress / SEC",
+      "region": "United States",
+      "applicable_to": ["US public companies", "Foreign private issuers listed on US exchanges", "Companies preparing for US IPO"],
+      "key_sections": [
+        { "section": "302", "title": "Corporate Responsibility for Financial Reports: CEO/CFO certify accuracy of financial statements" },
+        { "section": "404", "title": "Management Assessment of Internal Controls: annual report on effectiveness of internal controls over financial reporting (ICFR)" },
+        { "section": "409", "title": "Real time disclosure: disclose material changes rapidly" },
+        { "section": "802", "title": "Criminal penalties for altering documents or destroying records" },
+        { "section": "906", "title": "Corporate responsibility for financial reports: criminal penalties for CEO/CFO false certifications" }
+      ],
+      "it_general_controls": [
+        "Access management and segregation of duties",
+        "Change management for financial systems",
+        "Computer operations and batch processing",
+        "Program development and acquisition",
+        "Data backup and recovery"
+      ],
+      "audit_partner": "Must use PCAOB-registered external auditor",
+      "typical_compliance_cost_large": "1,000,000 to 5,000,000",
+      "typical_compliance_cost_mid": "200,000 to 1,000,000"
+    },
+    {
+      "id": "fca_uk",
+      "name": "FCA Regulatory Framework",
+      "full_name": "Financial Conduct Authority Regulatory Requirements (UK)",
+      "issuing_body": "Financial Conduct Authority (FCA)",
+      "region": "United Kingdom",
+      "applicable_to": ["FCA-authorised firms", "Payment institutions", "E-money institutions", "Crypto asset businesses registered with FCA"],
+      "key_regulations": [
+        { "reg": "SYSC", "title": "Senior Management Arrangements, Systems and Controls: governance, risk management, compliance" },
+        { "reg": "PRIN", "title": "Principles for Business: 12 principles including Principle 12 (Consumer Duty)" },
+        { "reg": "COBS", "title": "Conduct of Business Sourcebook: client communications, suitability, best execution" },
+        { "reg": "CASS", "title": "Client Assets Sourcebook: safeguarding client money and assets" },
+        { "reg": "Consumer Duty", "title": "Principle 12: deliver good outcomes for retail customers; assess and evidence outcomes annually" },
+        { "reg": "PS RTS", "title": "Payment Services Regulations: SCA, open banking API obligations under PSD2/PSR" },
+        { "reg": "MLR", "title": "Money Laundering Regulations: customer due diligence (CDD), enhanced due diligence (EDD), SAR filing" }
+      ],
+      "application_process": "FCA authorisation application; typically 6 to 12 months; fees from GBP 1,500 to 25,000+",
+      "capital_requirements": "Depends on firm type; Payment Institution min EUR 20,000 to 125,000"
+    }
+  ]
+}
